@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>টেকজোন বিডি – গ্যাজেট শপ</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f4ff;--card:#fff;--tx:#17142b;--mut:#6b6885;--pr:#6c3df4;--pr2:#ff7a45;--bd:#e8e4fa;--ok:#18a058;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f0d1c;--card:#1a1730;--tx:#f1efff;--mut:#a09cc0;--bd:#2b2748}}
+:root[data-theme="dark"]{--bg:#0f0d1c;--card:#1a1730;--tx:#f1efff;--mut:#a09cc0;--bd:#2b2748}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{font-family:"Hind Siliguri",system-ui,sans-serif;background:var(--bg);color:var(--tx);min-height:100%;padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+button,input,textarea{font:inherit;color:inherit}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);padding:12px 16px 8px}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.logo{font-weight:700;font-size:20px;letter-spacing:-.3px}.logo b{color:var(--pr)}
+.search{display:flex;gap:8px;align-items:center;background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:0 14px;height:46px}
+.search input{border:0;background:none;outline:0;flex:1;height:100%}
+main{max-width:1100px;margin:0 auto;padding:6px 16px}
+.hero{border-radius:24px;padding:22px;color:#fff;background:linear-gradient(135deg,#6c3df4,#b23cf0 60%,#ff7a45);position:relative;overflow:hidden;margin:6px 0 16px;animation:up .5s both}
+.hero h1{font-size:24px;line-height:1.25;max-width:70%}.hero p{opacity:.9;font-size:14px;margin-top:6px;max-width:70%}
+.hero i{position:absolute;right:14px;bottom:-6px;font-size:84px;font-style:normal;opacity:.95}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 12px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--bd);background:var(--card);border-radius:99px;padding:7px 15px;font-size:14px;cursor:pointer;transition:.2s}
+.chip.on{background:var(--pr);border-color:var(--pr);color:#fff;transform:scale(1.04)}
+h2{font-size:18px;margin:6px 0 12px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}@media(min-width:1000px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;animation:up .45s both;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(108,61,244,.15)}
+.vis{height:130px;display:grid;place-items:center;font-size:62px;position:relative;cursor:pointer}
+.vis img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;left:10px;top:10px;background:var(--pr2);color:#fff;font-size:12px;font-weight:600;padding:2px 9px;border-radius:99px}
+.cb{padding:11px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
+.nm{font-weight:600;font-size:14.5px;line-height:1.3;cursor:pointer}
+.pr{font-weight:700;font-size:17px;color:var(--pr)}.old{color:var(--mut);text-decoration:line-through;font-size:13px;margin-left:6px;font-weight:400}
+.btns{display:grid;gap:6px;margin-top:auto;padding-top:8px}
+.b{border:0;border-radius:12px;padding:9px 10px;font-weight:600;font-size:14px;cursor:pointer;transition:.15s;text-align:center}
+.b:active{transform:scale(.96)}
+.b1{background:var(--bg);color:var(--pr);border:1px solid var(--bd)}.b2{background:var(--pr);color:#fff}.b3{background:var(--ok);color:#fff;width:100%;padding:14px;font-size:16px;border-radius:14px}
+nav{position:fixed;left:0;right:0;bottom:0;z-index:25;background:var(--card);border-top:1px solid var(--bd);display:flex;justify-content:space-around;padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px))}
+nav button{flex:1;max-width:120px;background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:1px;color:var(--mut);font-size:12px;cursor:pointer;position:relative;padding:4px}
+nav button span{font-size:22px;transition:.2s}nav button.on{color:var(--pr);font-weight:600}nav button.on span{transform:translateY(-3px) scale(1.12)}
+.dot{position:absolute;top:0;right:26%;background:var(--pr2);color:#fff;border-radius:99px;font-size:11px;min-width:18px;height:18px;display:grid;place-items:center;padding:0 4px}
+.cats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.cat{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:20px 12px;text-align:center;cursor:pointer;transition:.2s}.cat:hover{transform:translateY(-3px)}
+.cat div{font-size:42px}.cat small{color:var(--mut)}
+.row{display:flex;gap:12px;background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:10px;margin-bottom:10px;align-items:center}
+.row .th{width:62px;height:62px;border-radius:14px;display:grid;place-items:center;font-size:32px;flex:none;overflow:hidden}.row .th img{width:100%;height:100%;object-fit:cover}
+.row .in{flex:1;min-width:0}.qty{display:flex;align-items:center;gap:10px;margin-top:4px}
+.qty button{width:30px;height:30px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);font-size:18px;cursor:pointer}
+.sum{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px;margin:12px 0}
+.sum div{display:flex;justify-content:space-between;padding:3px 0}.sum .t{font-weight:700;font-size:18px;border-top:1px dashed var(--bd);margin-top:6px;padding-top:8px}
+.empty{text-align:center;color:var(--mut);padding:50px 10px}.empty div{font-size:60px}
+.ov{position:fixed;inset:0;background:rgba(10,8,25,.55);z-index:40;display:none;align-items:flex-end;justify-content:center}.ov.on{display:flex;animation:fade .2s}
+.sheet{background:var(--bg);width:100%;max-width:560px;max-height:92%;overflow:auto;border-radius:26px 26px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom,0px));animation:slide .3s}
+.sh{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.x{border:0;background:var(--card);width:34px;height:34px;border-radius:50%;font-size:16px;cursor:pointer}
+label{display:block;font-size:14px;font-weight:600;margin:10px 0 4px}
+.f{width:100%;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:12px;outline:0}.f:focus{border-color:var(--pr)}
+.err{color:#e5484d;font-size:13px;min-height:16px}
+.cod{display:flex;gap:10px;align-items:center;background:var(--card);border:2px solid var(--pr);border-radius:14px;padding:12px;margin-top:6px}
+.note{font-size:12.5px;color:var(--mut);margin:8px 0}
+.toast{position:fixed;left:50%;bottom:calc(96px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:#17142b;color:#fff;padding:10px 18px;border-radius:99px;font-size:14px;opacity:0;pointer-events:none;transition:.3s;z-index:60;max-width:90%;text-align:center}.toast.on{opacity:1;transform:translate(-50%,0)}
+@keyframes up{from{opacity:0;transform:translateY(14px)}}@keyframes fade{from{opacity:0}}@keyframes slide{from{transform:translateY(60px);opacity:0}}
+</style>
+</head>
+<body>
+<header>
+ <div class="top"><div class="logo">টেক<b>জোন</b> বিডি ⚡</div><button class="x" id="theme" aria-label="থিম">🌓</button></div>
+ <div class="search">🔍<input id="q" type="search" placeholder="গ্যাজেট খুঁজুন… (যেমন: ইয়ারবাড)"></div>
+</header>
+<main id="app"></main>
+<nav>
+ <button data-v="home"><span>🏠</span>হোম</button>
+ <button data-v="cats"><span>🗂️</span>ক্যাটাগরি</button>
+ <button data-v="cart"><span>🛒</span>কার্ট<i class="dot" id="dot" hidden>0</i></button>
+ <button data-v="orders"><span>📦</span>অর্ডার</button>
+</nav>
+<div class="ov" id="ov"><div class="sheet" id="sheet"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+/* ===== এখানে নিজের তথ্য বসান / EDIT HERE ===== */
+const CFG={
+  shop:"টেকজোন বিডি",
+  whatsapp:"8801XXXXXXXXX",   // দেশের কোড সহ, + ছাড়া। যেমন: 8801712345678
+  delivery:80,                // ডেলিভারি চার্জ (৳)
+  freeOver:5000               // এর বেশি কিনলে ডেলিভারি ফ্রি (৳)
+};
+const CATS=[["সব","✨"],["অডিও","🎧"],["ওয়্যারেবল","⌚"],["চার্জার ও পাওয়ার","🔋"],["অ্যাক্সেসরিজ","🖱️"]];
+/* img: নিজের ছবির লিংক দিন (যেমন "images/buds.jpg"); খালি রাখলে ইমোজি দেখাবে */
+const P=[
+ {id:1,name:"ওয়্যারলেস ইয়ারবাডস প্রো",cat:"অডিও",price:1890,old:2490,emoji:"🎧",img:"",c:"#ede7ff",d:"ANC সাপোর্ট, ৩০ ঘণ্টা ব্যাটারি, টাচ কন্ট্রোল।"},
+ {id:2,name:"ব্লুটুথ স্পিকার মিনি",cat:"অডিও",price:1450,old:1800,emoji:"🔊",img:"",c:"#ffe9df",d:"পোর্টেবল, ওয়াটারপ্রুফ, গভীর বেস সাউন্ড।"},
+ {id:3,name:"স্মার্টওয়াচ ফিট X",cat:"ওয়্যারেবল",price:2990,old:3999,emoji:"⌚",img:"",c:"#e0f5ec",d:"হার্ট-রেট, ঘুম ট্র্যাকিং, ১.৮\" AMOLED ডিসপ্লে।"},
+ {id:4,name:"ফিটনেস ব্যান্ড ৮",cat:"ওয়্যারেবল",price:1290,old:1590,emoji:"📿",img:"",c:"#e3efff",d:"১৪ দিনের ব্যাটারি, স্টেপ ও ক্যালরি ট্র্যাকার।"},
+ {id:5,name:"২০,০০০ mAh পাওয়ার ব্যাংক",cat:"চার্জার ও পাওয়ার",price:2250,old:2790,emoji:"🔋",img:"",c:"#fff4d6",d:"২২.৫W ফাস্ট চার্জ, ডুয়াল আউটপুট।"},
+ {id:6,name:"৬৫W GaN ফাস্ট চার্জার",cat:"চার্জার ও পাওয়ার",price:1590,old:1990,emoji:"🔌",img:"",c:"#fde3ee",d:"ল্যাপটপ ও ফোন—সব চার্জ করে, ছোট ও হালকা।"},
+ {id:7,name:"ওয়্যারলেস গেমিং মাউস",cat:"অ্যাক্সেসরিজ",price:990,old:1290,emoji:"🖱️",img:"",c:"#e9ecff",d:"RGB লাইট, ১২০০০ DPI, রিচার্জেবল।"},
+ {id:8,name:"ম্যাগনেটিক ফোন স্ট্যান্ড",cat:"অ্যাক্সেসরিজ",price:550,old:790,emoji:"📱",img:"",c:"#e6f7f7",d:"এডজাস্টেবল অ্যাঙ্গেল, ডেস্ক ও গাড়ির জন্য।"}
+];
+/* ========================================== */
+const $=s=>document.querySelector(s),bn=n=>Number(n).toLocaleString("bn-BD"),tk=n=>"৳"+bn(n);
+const ls={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let cart=ls.get("tz_cart",[]),view="home",cat="সব",q="";
+const save=()=>ls.set("tz_cart",cart);
+const prod=id=>P.find(p=>p.id==id);
+const toast=m=>{const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("on"),2200)};
+const vis=p=>p.img?`<img src="${p.img}" alt="${p.name}" onerror="this.remove()">`:p.emoji;
+const sub=()=>cart.reduce((s,i)=>s+prod(i.id).price*i.q,0);
+const ship=()=>cart.length&&sub()<CFG.freeOver?CFG.delivery:0;
+function card(p,i){const off=Math.round((1-p.price/p.old)*100);
+ return `<div class="card" style="animation-delay:${i*40}ms"><div class="vis" style="background:${p.c}" data-a="view" data-id="${p.id}">${vis(p)}<span class="badge">-${bn(off)}%</span></div>
+ <div class="cb"><div class="nm" data-a="view" data-id="${p.id}">${p.name}</div><div><span class="pr">${tk(p.price)}</span><span class="old">${tk(p.old)}</span></div>
+ <div class="btns"><button class="b b1" data-a="add" data-id="${p.id}">🛒 কার্টে যোগ</button><button class="b b2" data-a="buy" data-id="${p.id}">এখনই কিনুন</button></div></div></div>`}
+function render(){
+ document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.v===view));
+ const n=cart.reduce((s,i)=>s+i.q,0),dot=$("#dot");dot.hidden=!n;dot.textContent=bn(n);
+ let h="";
+ if(view==="home"){
+  const list=P.filter(p=>(cat==="সব"||p.cat===cat)&&p.name.toLowerCase().includes(q.toLowerCase()));
+  h=(q?"":`<div class="hero"><h1>সেরা গ্যাজেট, সেরা দামে</h1><p>সারা বাংলাদেশে ক্যাশ অন ডেলিভারি</p><i>🎧</i></div>`)+
+   `<div class="chips">${CATS.map(c=>`<button class="chip ${c[0]===cat?"on":""}" data-a="cat" data-c="${c[0]}">${c[1]} ${c[0]}</button>`).join("")}</div>
+   <h2>${q?"সার্চ ফলাফল":"জনপ্রিয় পণ্য"}</h2>`+(list.length?`<div class="grid">${list.map(card).join("")}</div>`:`<div class="empty"><div>🔎</div>কোনো পণ্য পাওয়া যায়নি</div>`);
+ }else if(view==="cats"){
+  h=`<h2>ক্যাটাগরি</h2><div class="cats">${CATS.slice(1).map(c=>`<div class="cat" data-a="cat" data-c="${c[0]}" data-go="1"><div>${c[1]}</div><b>${c[0]}</b><br><small>${bn(P.filter(p=>p.cat===c[0]).length)}টি পণ্য</small></div>`).join("")}</div>`;
+ }else if(view==="cart"){
+  h=`<h2>আপনার কার্ট</h2>`+(cart.length?cart.map(i=>{const p=prod(i.id);return `<div class="row"><div class="th" style="background:${p.c}">${vis(p)}</div><div class="in"><div class="nm">${p.name}</div><b class="pr" style="font-size:15px">${tk(p.price*i.q)}</b>
+   <div class="qty"><button data-a="dec" data-id="${p.id}">−</button><b>${bn(i.q)}</b><button data-a="inc" data-id="${p.id}">+</button></div></div><button class="x" data-a="del" data-id="${p.id}" aria-label="মুছুন">🗑</button></div>`}).join("")+
+   `<div class="sum"><div><span>সাবটোটাল</span><span>${tk(sub())}</span></div><div><span>ডেলিভারি</span><span>${ship()?tk(ship()):"ফ্রি"}</span></div><div class="t"><span>মোট</span><span>${tk(sub()+ship())}</span></div></div>
+   <button class="b b3" style="background:var(--pr)" data-a="checkout">চেকআউটে যান →</button>`:`<div class="empty"><div>🛒</div>কার্ট খালি আছে<br><br><button class="b b2" data-v="home">কেনাকাটা শুরু করুন</button></div>`);
+ }else{
+  const os=ls.get("tz_orders",[]);
+  h=`<h2>আমার অর্ডার</h2><p class="note">এগুলো শুধু আপনার এই ফোনে সেভ থাকে (কোনো ডেটাবেসে নয়)। অর্ডার নিশ্চিত হয় হোয়াটসঅ্যাপে আমাদের কাছে মেসেজ পৌঁছালে।</p>`+(os.length?os.map(o=>`<div class="row" style="display:block"><b>#${o.no}</b> <small style="color:var(--mut)">${o.date}</small><div style="font-size:14px;margin:4px 0">${o.items}</div><b class="pr">${tk(o.total)}</b> · ক্যাশ অন ডেলিভারি</div>`).join(""):`<div class="empty"><div>📦</div>এখনও কোনো অর্ডার নেই</div>`);
+ }
+ $("#app").innerHTML=h;
+}
+function sheet(h){$("#sheet").innerHTML=h;$("#ov").classList.add("on")}
+function close(){$("#ov").classList.remove("on")}
+function add(id){const i=cart.find(c=>c.id==id);i?i.q++:cart.push({id:+id,q:1});save();render()}
+function detail(id){const p=prod(id);sheet(`<div class="sh"><b>পণ্যের বিবরণ</b><button class="x" data-a="close">✕</button></div>
+ <div class="vis" style="background:${p.c};border-radius:20px;height:190px;font-size:96px;cursor:default;overflow:hidden">${vis(p)}</div>
+ <h2 style="margin-top:14px">${p.name}</h2><div><span class="pr" style="font-size:22px">${tk(p.price)}</span><span class="old">${tk(p.old)}</span></div>
+ <p style="color:var(--mut);margin:10px 0 14px">${p.d}</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><button class="b b1" data-a="add" data-id="${p.id}" data-close="1">🛒 কার্টে যোগ</button><button class="b b2" data-a="buy" data-id="${p.id}">এখনই কিনুন</button></div>`)}
+function checkout(){
+ if(!cart.length)return toast("কার্ট খালি!");
+ sheet(`<div class="sh"><b>চেকআউট</b><button class="x" data-a="close">✕</button></div>
+ <form id="cf" novalidate>
+ <label>আপনার নাম *</label><input class="f" id="n" autocomplete="name" placeholder="যেমন: রহিম উদ্দিন"><div class="err" id="e1"></div>
+ <label>মোবাইল নম্বর *</label><input class="f" id="ph" type="tel" inputmode="tel" autocomplete="tel" placeholder="01XXXXXXXXX"><div class="err" id="e2"></div>
+ <label>পূর্ণ ঠিকানা *</label><textarea class="f" id="ad" rows="3" placeholder="বাসা/রোড, এলাকা, থানা, জেলা"></textarea><div class="err" id="e3"></div>
+ <label>ডেলিভারি নোট (ঐচ্ছিক)</label><input class="f" id="nt" placeholder="যেমন: বিকেলে ডেলিভারি দিন">
+ <label>পেমেন্ট</label><div class="cod">💵 <div><b>ক্যাশ অন ডেলিভারি (COD)</b><br><small style="color:var(--mut)">পণ্য হাতে পেয়ে টাকা দিন</small></div></div>
+ <div class="sum"><div><span>সাবটোটাল</span><span>${tk(sub())}</span></div><div><span>ডেলিভারি</span><span>${ship()?tk(ship()):"ফ্রি"}</span></div><div class="t"><span>মোট</span><span>${tk(sub()+ship())}</span></div></div>
+ <button class="b b3" type="submit">✅ অর্ডার করুন (হোয়াটসঅ্যাপে পাঠান)</button>
+ <p class="note">বাটনে চাপ দিলে হোয়াটসঅ্যাপ খুলবে ও অর্ডারের বিবরণ লেখা থাকবে। সেখানে <b>Send</b> চাপলেই দোকানে অর্ডার পৌঁছাবে।</p></form>`);
+ $("#cf").addEventListener("submit",submit);
+}
+function submit(e){
+ e.preventDefault();
+ const en=s=>s.replace(/[০-৯]/g,d=>"০১২৩৪৫৬৭৮৯".indexOf(d)).replace(/[\s-]/g,"").replace(/^\+?88/,"");
+ const n=$("#n").value.trim(),ph=en($("#ph").value),ad=$("#ad").value.trim(),nt=$("#nt").value.trim();let ok=true;
+ $("#e1").textContent=n.length<2?(ok=false,"নাম লিখুন"):"";
+ $("#e2").textContent=!/^01[3-9]\d{8}$/.test(ph)?(ok=false,"সঠিক ১১ ডিজিটের মোবাইল নম্বর দিন"):"";
+ $("#e3").textContent=ad.length<10?(ok=false,"পূর্ণ ঠিকানা লিখুন (কমপক্ষে ১০ অক্ষর)"):"";
+ if(!ok)return;
+ const no=Date.now().toString().slice(-6),total=sub()+ship();
+ const lines=cart.map((i,k)=>{const p=prod(i.id);return `${k+1}. ${p.name} × ${i.q} = ৳${p.price*i.q}`});
+ const msg=`🛍️ *নতুন অর্ডার #${no}* – ${CFG.shop}\n\n${lines.join("\n")}\n\nসাবটোটাল: ৳${sub()}\nডেলিভারি: ${ship()?"৳"+ship():"ফ্রি"}\n*মোট: ৳${total}*\nপেমেন্ট: ক্যাশ অন ডেলিভারি\n\n👤 নাম: ${n}\n📞 ফোন: ${ph}\n📍 ঠিকানা: ${ad}\n📝 নোট: ${nt||"নেই"}`;
+ const os=ls.get("tz_orders",[]);os.unshift({no,date:new Date().toLocaleDateString("bn-BD"),items:cart.map(i=>prod(i.id).name+" ×"+bn(i.q)).join(", "),total});ls.set("tz_orders",os.slice(0,30));
+ const placeholder=/X/.test(CFG.whatsapp);
+ const url=`https://wa.me/${placeholder?"":CFG.whatsapp}?text=${encodeURIComponent(msg)}`;
+ cart=[];save();close();view="orders";render();
+ toast(placeholder?"কোডে WhatsApp নম্বর বসানো হয়নি — যেকোনো কনটাক্টে পাঠান":"হোয়াটসঅ্যাপ খুলছে… Send চাপুন");
+ const w=window.open(url,"_blank");if(!w)location.href=url;
+}
+document.addEventListener("click",e=>{
+ const t=e.target.closest("[data-a],[data-v]");if(!t){if(e.target.id==="ov")close();return}
+ const a=t.dataset.a,id=t.dataset.id;
+ if(t.dataset.v){view=t.dataset.v;if(view==="home"){cat="সব"}scrollTo({top:0,behavior:"smooth"});return render()}
+ if(a==="cat"){cat=t.dataset.c;if(t.dataset.go){view="home"}return render()}
+ if(a==="view")return detail(id);
+ if(a==="add"){add(id);toast("কার্টে যোগ হয়েছে ✓");if(t.dataset.close)close();return}
+ if(a==="buy"){cart=cart.filter(c=>c.id!=id);cart.push({id:+id,q:1});save();render();return checkout()}
+ if(a==="inc"){cart.find(c=>c.id==id).q++}
+ if(a==="dec"){const i=cart.find(c=>c.id==id);if(--i.q<1)cart=cart.filter(c=>c.id!=id)}
+ if(a==="del")cart=cart.filter(c=>c.id!=id);
+ if(a==="inc"||a==="dec"||a==="del"){save();return render()}
+ if(a==="checkout")return checkout();
+ if(a==="close")return close();
+});
+$("#q").addEventListener("input",e=>{q=e.target.value.trim();if(view!=="home")view="home";render()});
+$("#theme").addEventListener("click",()=>{const r=document.documentElement,d=r.dataset.theme==="dark"||(!r.dataset.theme&&matchMedia("(prefers-color-scheme:dark)").matches);r.dataset.theme=d?"light":"dark"});
+render();
+</script>
+</body>
+</html>
