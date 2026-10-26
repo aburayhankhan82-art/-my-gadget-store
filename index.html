@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f6f4ff;--card:#fff;--tx:#17142b;--mut:#6b6885;--pr:#6c3df4;--pr2:#ff7a45;--bd:#e8e4fa;--ok:#18a058;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f0d1c;--card:#1a1730;--tx:#f1efff;--mut:#a09cc0;--bd:#2b2748}}
+
 :root[data-theme="dark"]{--bg:#0f0d1c;--card:#1a1730;--tx:#f1efff;--mut:#a09cc0;--bd:#2b2748}
 *{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
 html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
@@ -85,7 +85,7 @@ label{display:block;font-size:14px;font-weight:600;margin:10px 0 4px}
 /* ===== এখানে নিজের তথ্য বসান / EDIT HERE ===== */
 const CFG={
   shop:"টেকজোন বিডি",
-  whatsapp:"8801XXXXXXXXX",   // দেশের কোড সহ, + ছাড়া। যেমন: 8801712345678
+  whatsapp:"8801792188024",   // দেশের কোড সহ, + ছাড়া। আপনার নম্বর বসানো আছে
   delivery:80,                // ডেলিভারি চার্জ (৳)
   freeOver:5000               // এর বেশি কিনলে ডেলিভারি ফ্রি (৳)
 };
@@ -192,7 +192,7 @@ document.addEventListener("click",e=>{
  if(a==="close")return close();
 });
 $("#q").addEventListener("input",e=>{q=e.target.value.trim();if(view!=="home")view="home";render()});
-$("#theme").addEventListener("click",()=>{const r=document.documentElement,d=r.dataset.theme==="dark"||(!r.dataset.theme&&matchMedia("(prefers-color-scheme:dark)").matches);r.dataset.theme=d?"light":"dark"});
+$("#theme").addEventListener("click",()=>{const r=document.documentElement;r.dataset.theme=r.dataset.theme==="dark"?"light":"dark"});
 render();
 </script>
 </body>
